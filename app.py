@@ -23,7 +23,7 @@ def crear_producto():
     precio = data.get('price')
     stock = data.get('stock')
     categoria_id = data.get('category_id')
-    imagen_url = data.get('imagen_url')
+    imagen_url = data.get('image_url')
 
     if not (nombre and precio and categoria_id):
         return jsonify({'error': 'Name, price and category are Required'}), 400
