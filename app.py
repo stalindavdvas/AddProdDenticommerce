@@ -43,11 +43,11 @@ def crear_producto():
 
         return jsonify({
             'id': producto[0],
-            'nombre': producto[1],
-            'descripcion': producto[2],
-            'precio': producto[3],
+            'name': producto[1],
+            'description': producto[2],
+            'price': producto[3],
             'stock': producto[4],
-            'categoria_id': producto[5],
+            'category_id': producto[5],
             'image_url': producto[6]
         }), 201
     except Exception as e:
@@ -57,6 +57,6 @@ def crear_producto():
         cursor.close()
         conn.close()
 
-# Bloque __main__ para ejecutar el microservicio en el puerto 5001
+# Block main to execute in port 5000
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
