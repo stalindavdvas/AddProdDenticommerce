@@ -5,7 +5,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-# Configuración de la conexión a PostgreSQL
+# Postgres Config
 def get_db_connection():
     return psycopg2.connect(
         host="98.84.245.136",
@@ -18,15 +18,15 @@ def get_db_connection():
 def crear_producto():
     """Crear un nuevo producto con una URL de imagen"""
     data = request.get_json()
-    nombre = data.get('nombre')
-    descripcion = data.get('descripcion')
-    precio = data.get('precio')
+    nombre = data.get('name')
+    descripcion = data.get('description')
+    precio = data.get('price')
     stock = data.get('stock')
-    categoria_id = data.get('categoria_id')
-    imagen_url = data.get('imagen_url')  # Recibir la URL de la imagen
+    categoria_id = data.get('category_id')
+    imagen_url = data.get('imagen_url')
 
     if not (nombre and precio and categoria_id):
-        return jsonify({'error': 'Nombre, precio y categoría son obligatorios'}), 400
+        return jsonify({'error': 'Name, price and category are Required'}), 400
 
     conn = get_db_connection()
     cursor = conn.cursor()
