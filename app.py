@@ -8,9 +8,9 @@ CORS(app)
 # Configuración de la conexión a PostgreSQL
 def get_db_connection():
     return psycopg2.connect(
-        host="host.docker.internal",
+        host="98.84.245.136",
         database="items",
-        user="postgres",
+        user="stalin",
         password="stalin"
     )
 
@@ -59,4 +59,4 @@ def crear_producto():
 
 # Bloque __main__ para ejecutar el microservicio en el puerto 5001
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

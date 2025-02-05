@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y libpq-dev gcc
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Exponer el puerto donde se ejecutará tu aplicación (5001 para Flask)
-EXPOSE 5001
+EXPOSE 5000
 
 # Comando para ejecutar la aplicación
 CMD ["python", "app.py"]
